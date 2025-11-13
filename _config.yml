@@ -1,0 +1,60 @@
+
+# ----------  GitHub Pages / Jekyll  ----------
+title: "Ring.do"
+description: "Virtual telephony for business"
+# Use a simple built-in theme (safe on GitHub Pages)
+theme: minima
+
+source: docs
+
+# ----------  Markdown & Highlighter  ----------
+markdown: kramdown
+highlighter: rouge
+
+# ----------  Site URL (for correct canonical links & sitemap) ----------
+# Custom domain set in GitHub Pages → Settings → Pages → Custom domain
+url: https://ring.do
+# If the site is at the root of the domain, leave baseurl empty:
+baseurl: ""
+
+# ----------  Permalinks ----------
+permalink: pretty
+
+# ----------  Build settings ----------
+# Keep local/dev files out of the published site
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - .github
+  - node_modules
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - docker-compose.yml
+
+# Always include these files in the output (if present at repo root)
+include:
+  - CNAME     # required for custom domain ring.do
+  - robots.txt
+  - favicon.ico
+
+# ----------  Plugins ----------
+plugins:
+  - jekyll-sitemap  # generates /sitemap.xml automatically
+
+# ----------  Author (optional, used by some themes like minima) ----------
+author:
+  name: "Ring.do"
+  email: "info@ring.do"
+
+# ----------  Social (optional; used by minima if provided) ----------
+# social_links:
+#   - { platform: github,  user_url: "https://github.com/your-org" }
+#   - { platform: linkedin, user_url: "https://www.linkedin.com/company/your-company" }
+
+# ----------  Minima theme options (optional) ----------
+# show_excerpts: true

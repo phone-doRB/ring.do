@@ -1,0 +1,255 @@
+
+/* ===== Ring.do theme (FastSpring-inspired, custom brand colors) ===== */
+
+/* Brand palette */
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --text:#101828;
+  --muted:#667085;
+
+  /* Brand colors */
+  --primary:#FF6B7A;
+  --primary-600:#e45d6c;
+  --link:#FFB88C;
+  --ring: rgba(255,107,122,.25);
+
+  --radius:18px;
+  --shadow:0 14px 30px rgba(16,24,40,.08), 0 2px 8px rgba(16,24,40,.06);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font:16px/1.65 Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#fbfcff, var(--bg));
+}
+
+/* Utility containers */
+.container{width:min(1140px,100% - 2rem);margin-inline:auto}
+.section{padding:80px 0}
+.section.alt{background:#fff}
+.section-title{
+  font-size:34px;line-height:1.2;margin:0 0 10px;text-align:center;letter-spacing:-.01em;
+  color:var(--primary);
+}
+.section-subtitle{color:var(--muted);text-align:center;margin:0 0 28px}
+
+/* ===== Header & FastSpring-like Navigation ===== */
+.site-header{
+  position:sticky;top:0;background:#fff;border-bottom:1px solid #eef2f6;z-index:50
+}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+
+/* 3-zone layout like the screenshot */
+.fs-nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px}
+
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand-name{font-weight:800;font-size:22px;letter-spacing:.1px}
+
+/* Centered primary nav */
+.nav-center{
+  display:flex;gap:28px; padding-left: 1rem;
+}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-link{
+  text-decoration:none;
+  color:#0f172a;
+  font-weight:600;
+  position:relative;
+}
+.nav-link:hover{color:var(--link)}
+.has-caret::after{
+  content:"";
+  display:inline-block;
+  width:0;height:0;margin-left:6px;
+  border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid #0f172a;
+  vertical-align:middle;transform:translateY(-1px);
+}
+
+/* Buttons — primary uses brand coral, ghost is subtle outline */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:12px 18px;border:1px solid transparent;
+  cursor:pointer;text-decoration:none;font-weight:700;letter-spacing:.2px;
+  box-shadow:0 1px 2px rgba(16,24,40,.04)
+}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-600)}
+.btn-ghost{background:#fff;border-color:#e6eaf0;color:#0f172a}
+.btn-ghost:hover{border-color:#d9dee7}
+.try-now{padding:12px 22px}
+
+/* Mobile nav toggle */
+.nav-toggle{display:none;background:transparent;border:0;font-size:20px}
+
+/* Hero */
+.hero{
+  padding:64px 0 24px;
+  background:
+    radial-gradient(900px 260px at 20% -120px, rgba(255,107,122,.12), transparent 60%),
+    radial-gradient(900px 260px at 80% -120px, rgba(255,184,140,.14), transparent 60%);
+}
+.hero-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.display{font-size:52px;line-height:1.1;margin:0;letter-spacing:-.02em}
+.gradient{
+  background:linear-gradient(90deg,var(--primary),var(--link));
+  -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.lead{color:#334155;max-width:60ch}
+.cta{display:flex;gap:12px;margin:22px 0 8px}
+
+/* Cards / Surfaces */
+.card{
+  background:var(--card);border-radius:var(--radius);
+  box-shadow:var(--shadow);border:1px solid #eef2f6
+}
+
+/* Call Summary */
+.hero-illustration{padding:20px;display:flex;flex-direction:column;gap:14px}
+.mock-order{background:#fffafb;border:1px solid #ffe1e6;border-radius:14px;padding:16px}
+.mock-header{display:flex;justify-content:space-between;margin-bottom:12px}
+.mock-list{list-style:none;padding:0;margin:0 0 14px;display:grid;gap:14px}
+.mock-list li{display:grid;grid-template-rows:auto auto;align-items:start;gap:4px}
+.mock-list li span{font-size:12px;letter-spacing:.2px;color:#667085}
+.mock-list li strong{font-size:16px;color:#0f172a;font-weight:800}
+.dot{font-size:12px}
+.green{color:#16a34a}
+.hero-badges{display:flex;gap:8px}
+.badge{border:1px dashed #f2dcd5;border-radius:999px;padding:5px 12px;font-weight:700;color:var(--muted);background:#fff}
+
+/* Metrics strip */
+.metrics{padding:24px 0 8px}
+.metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.metric{background:#fff;border:1px solid #eef2f6;border-radius:14px;padding:22px;text-align:center;box-shadow:var(--shadow)}
+.metric-value{font-weight:800;font-size:28px;color:var(--primary)}
+.metric-label{color:var(--muted)}
+
+/* Features */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature{padding:20px}
+.feature-icon{
+  width:46px;height:46px;display:grid;place-items:center;border-radius:12px;
+  background:#FFF0E6;color:var(--primary);font-size:22px;margin-bottom:12px
+}
+
+/* Who is it for */
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px 40px;margin-top:22px}
+.who-item{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:8px 0 22px;border-bottom:1px solid #eef2f6}
+.who-item:nth-child(3),.who-item:nth-child(6){border-bottom:none;}
+.who-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:#FFF0E6;color:var(--primary);font-size:22px}
+.who-title{margin:0 0 6px;font-size:20px;line-height:1.25;color:#0f172a}
+.who-desc{margin:0 0 10px;color:#334155}
+.who-link{display:inline-block;text-decoration:none;color:var(--link);font-weight:700;border-bottom:1px solid rgba(255,184,140,.45);padding-bottom:2px}
+.who-link:hover{opacity:.9}
+
+/* Equal-height grids (testimonials & pricing) */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.cards-3 .card{height:100%;display:flex;flex-direction:column}
+
+/* Testimonials */
+.testimonial{padding:22px}
+.testimonial p{margin:0 0 10px;color:#0f172a}
+.cards-3 .card{border:1px solid #eef2f6}
+
+/* Pricing */
+.billing-toggle{display:flex;align-items:center;gap:12px;justify-content:center;margin:10px 0 22px;color:#334155}
+.save{color:var(--primary);font-style:normal;font-weight:800;margin-left:4px}
+.switch{position:relative;display:inline-block;width:56px;height:30px}
+.switch input{display:none}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#fde7df;border-radius:999px;transition:.2s}
+.slider:before{content:"";position:absolute;height:24px;width:24px;left:4px;top:3px;background:#fff;border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.15);transition:.2s}
+.switch input:checked + .slider{background:#ffd9c4}
+.switch input:checked + .slider:before{transform:translateX(26px)}
+.price-cards .price{padding:22px;display:flex;flex-direction:column;flex:1 1 auto}
+.price-head{font-weight:800;margin-bottom:8px;color:#0f172a}
+.price-amount{font-size:34px;font-weight:900;margin:8px 0 12px}
+.price-amount .currency{font-size:20px;margin-right:2px;color:#334155}
+.price-amount .per{font-size:14px;color:var(--muted);margin-left:4px}
+.price-features{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.price-cards .price .btn{margin-top:auto;width:100%;align-self:stretch}
+.badge-card{position:relative}
+.most-popular{position:absolute;top:-12px;right:-12px;background:var(--link);color:#fff;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;box-shadow:var(--shadow)}
+
+/* FAQ */
+.faq details{border:1px solid #eef2f6;border-radius:14px;background:#fff;box-shadow:var(--shadow);padding:12px 16px;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:800;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq p{margin:10px 0 0;color:#334155}
+
+/* Footer */
+.site-footer{margin-top:44px;border-top:1px solid #eef2f6;background:#fff}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.footer-nav{display:flex;gap:18px}
+.footer-nav a{text-decoration:none;color:#0f172a}
+.footer-nav a:hover{color:var(--link)}
+
+/* Links */
+a{color:var(--link)}
+a:hover{opacity:.9}
+
+/* Secondary surfaces */
+.alt{background:linear-gradient(180deg,#fff, #fff5f6)}
+
+/* Polished select */
+.ha-select{
+  width:100%;
+  padding:10px 40px 10px 12px;
+  border:2px solid #ffc8c8;border-radius:12px;background:#fff;font:inherit;color:#0f172a;
+  appearance:none;-webkit-appearance:none;-moz-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;background-size:20px;
+  transition:border-color .2s, box-shadow .2s, background-color .2s;
+}
+.ha-select:hover{ border-color:#ffb88c; }
+.ha-select:focus{ border-color:#ff6b7a; box-shadow:0 0 0 4px var(--ring); outline:none; }
+
+/* ===== Responsive Header ===== */
+@media (max-width: 980px){
+  .hero-inner{grid-template-columns:1fr}
+  .metrics-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-grid,.cards-3{grid-template-columns:1fr 1fr}
+  .who-grid{grid-template-columns:1fr}
+  .who-item:nth-child(3){border-bottom:1px solid #eef2f6}
+}
+@media (max-width: 860px){
+  .fs-nav{grid-template-columns:auto auto auto}
+  .nav-toggle{display:inline-block}
+  .nav-center,
+  .nav-right{
+    display:none;
+    position:absolute;
+    left:0;right:0;top:60px;
+    background:#fff;border-bottom:1px solid #eef2f6;
+    padding:12px 16px;
+  }
+  .nav-center.open,
+  .nav-right.open{display:flex}
+  .nav-center{flex-direction:column;gap:12px}
+  .nav-right{justify-content:flex-start;gap:12px}
+}
+@media (max-width: 640px){
+  .feature-grid,.cards-3,.metrics-grid{grid-template-columns:1fr}
+  .display{font-size:40px}
+}
+
+
+/* Hero media image */
+.hero-media{
+  padding: 0;
+  margin: 0;
+  display: block;
+  align-self: center;
+}
+.hero-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+
+/* Put image on top for mobile */
+@media (max-width: 980px){
+  .hero-media{ order: -1; } /* image first on small screens */
+}
